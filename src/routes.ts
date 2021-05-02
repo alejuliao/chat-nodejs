@@ -1,17 +1,10 @@
 
 import { Router } from 'express'
+import { MessagesController} from './controllers/MessagesController';
 import { SettingsController } from './controllers/SettingsController';
 import { UsersController } from './controllers/UsersController';
-import { MessagesController} from './controllers/MessagesController';
 
 const routes = Router();
-
-// routes params => parametros de rotas
-//http://localhost:3000/settings/1
-//query params => filtros e buscas
-//http://localhost:3000/settings/1?search=blabla
-
-//body params => 
 
 const settingsController = new SettingsController();
 const usersController = new UsersController();

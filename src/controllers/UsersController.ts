@@ -3,14 +3,19 @@ import { UsersService } from "../services/UsersService";
 
 
 class UsersController {
-  async create(request: Request, response: Response): Promise<Response>{
-    const { email } = request.body;
+  async create(request: Request, response: Response): Promise<Response> {
 
-    const userService = new UsersService();
-
-    const user = await userService.create(email)
-
-    return response.json(user)
+    try {
+      const { email } = request.body
+      const usersService = new UsersService()
+      const user = await usersService.create(email)
+      return response.json(user)
+    }
+    catch (err) {
+      return response.status(400).json({
+        message: err.message
+      })
+    }
   }
 }
 export { UsersController }

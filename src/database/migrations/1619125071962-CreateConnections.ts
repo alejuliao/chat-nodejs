@@ -19,11 +19,11 @@ export class CreateConnections1619125071962 implements MigrationInterface {
                     },
                     {
                         name: "user_id",
-                        type: "uuid"
+                        type: "uuid",
                     },
                     {
                         name:"socket_id",
-                        type: "varchar"
+                        type: "varchar",
                     },
                     {
                         name:"created_at",
